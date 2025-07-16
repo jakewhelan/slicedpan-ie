@@ -1,96 +1,127 @@
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Rocket, Code, Globe } from "lucide-react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Layout } from "@/components/Layout"
+import { ServiceCard } from "@/components/ServiceCard"
+import { ArrowRight, CheckCircle } from "lucide-react"
 
 function App() {
+  const services = [
+    {
+      icon: "🚀",
+      title: "Product Development",
+      description: "Custom web applications using React, Vue, and Angular. Full-stack development with Node.js and TypeScript."
+    },
+    {
+      icon: "🎮",
+      title: "Game Development",
+      description: "Custom game engines and interactive experiences. Multiplayer systems and real-time applications."
+    },
+    {
+      icon: "💡",
+      title: "Technical Consulting",
+      description: "Frontend architecture and modernization. Technical leadership and team mentoring."
+    },
+    {
+      icon: "🔧",
+      title: "Prototype Development",
+      description: "Rapid MVP development and proof-of-concept implementations. Technical feasibility assessments."
+    }
+  ]
+
+  const benefits = [
+    "Deep Technical Expertise: Principal-level engineering experience across multiple domains",
+    "Full-Stack Capability: From frontend interfaces to backend infrastructure",
+    "Product-Minded: Bridge between business goals and technical implementation",
+    "Quality Focused: Attention to detail and engineering excellence"
+  ]
+
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-16">
-        <header className="text-center mb-16">
-          <h1 className="text-4xl font-bold tracking-tight mb-4">
-            Welcome to SlicedPan.ie
+    <Layout>
+      {/* Hero Section */}
+      <section className="py-20 px-4 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-background">
+        <div className="container mx-auto text-center max-w-4xl">
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
+            Sliced Pan Solutions
           </h1>
-          <p className="text-xl text-muted-foreground">
-            A simple React app with shadcn/ui and Tailwind CSS
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8">
+            Technology & Product Development Consulting
           </p>
-        </header>
+          <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
+            Sliced Pan Solutions is a technology consulting company specializing in modern web development, 
+            mobile applications, and innovative product engineering. We help businesses transform ideas into 
+            robust, scalable solutions.
+          </p>
+          <div className="flex gap-4 justify-center">
+            <Button size="lg" asChild>
+              <a href="/slicedpan-ie/contact.html">
+                Get Started <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <a href="/slicedpan-ie/services.html">View Services</a>
+            </Button>
+          </div>
+        </div>
+      </section>
 
-        <div className="grid gap-6 md:grid-cols-3 max-w-4xl mx-auto">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Rocket className="h-5 w-5" />
-                Fast Development
-              </CardTitle>
-              <CardDescription>
-                Built with Vite for lightning-fast development
+      {/* Services Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Comprehensive technology solutions tailored to your business needs
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
+            {services.map((service, index) => (
+              <ServiceCard key={index} {...service} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-20 px-4 bg-gradient-to-b from-white to-blue-50 dark:from-background dark:to-gray-900">
+        <div className="container mx-auto max-w-4xl">
+          <Card className="p-8">
+            <CardHeader className="text-center">
+              <CardTitle className="text-3xl md:text-4xl mb-4">Why Choose Sliced Pan Solutions?</CardTitle>
+              <CardDescription className="text-lg">
+                Partner with experienced professionals who understand both technology and business
               </CardDescription>
             </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Experience instant hot module replacement and optimized builds
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Code className="h-5 w-5" />
-                Modern Stack
-              </CardTitle>
-              <CardDescription>
-                React, TypeScript, and Tailwind CSS
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Type-safe code with beautiful, responsive design
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Globe className="h-5 w-5" />
-                Ready to Deploy
-              </CardTitle>
-              <CardDescription>
-                Configured for GitHub Pages deployment
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Static site generation with simple deployment process
-              </p>
+            <CardContent className="mt-8">
+              <ul className="space-y-4">
+                {benefits.map((benefit, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <CheckCircle className="h-6 w-6 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
             </CardContent>
           </Card>
         </div>
+      </section>
 
-        <div className="mt-16 text-center">
-          <Card className="max-w-md mx-auto">
-            <CardHeader>
-              <CardTitle>Get Started</CardTitle>
-              <CardDescription>
-                Start building your next project today
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <Button className="w-full" size="lg">
-                View Documentation
-              </Button>
-              <Button variant="outline" className="w-full" size="lg">
-                Browse Components
-              </Button>
-            </CardContent>
-            <CardFooter className="text-center text-sm text-muted-foreground">
-              Ready to deploy to GitHub Pages
-            </CardFooter>
-          </Card>
+      {/* CTA Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto text-center max-w-2xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Ready to Build Something Great?
+          </h2>
+          <p className="text-lg text-muted-foreground mb-8">
+            Let's discuss how Sliced Pan Solutions can help bring your ideas to life.
+          </p>
+          <Button size="lg" asChild>
+            <a href="/slicedpan-ie/contact.html">
+              Start a Conversation <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
         </div>
-      </div>
-    </div>
+      </section>
+    </Layout>
   )
 }
 
