@@ -1,12 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { Layout } from '@/components/Layout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import '@/index.css';
+import '@/index.css'
 
 function Contact() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <div className="container mx-auto px-4 py-16 max-w-6xl">
+    <Layout>
+      <div className="py-8 max-w-6xl mx-auto">
         <div className="mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact Us</h1>
           <p className="text-xl text-gray-600 max-w-3xl">
@@ -121,15 +122,14 @@ function Contact() {
           </CardContent>
         </Card>
       </div>
-    </div>
+    </Layout>
   );
 }
 
 export default Contact;
 
-// Render the component
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Contact />
-  </React.StrictMode>
-);
+  </React.StrictMode>,
+)
