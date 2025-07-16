@@ -23,7 +23,7 @@ function About() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-gray-600">
-                Jake brings over 15 years of experience in software engineering and technical leadership. He has led product engineering teams at companies ranging from startups to Fortune 500 enterprises, including SlashID, GitStart, CalypsoAI, and Citi.
+                Jake brings over 15 years of experience in software engineering and technical leadership. He has led product engineering teams at companies ranging from startups to Fortune 500 enterprises.
               </p>
               
               <div>

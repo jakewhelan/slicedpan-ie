@@ -5,11 +5,11 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navigationLinks = [
-    { name: 'Home', href: '/slicedpan-ie/' },
-    { name: 'About', href: '/slicedpan-ie/about.html' },
-    { name: 'Services', href: '/slicedpan-ie/services.html' },
-    { name: 'Contact', href: '/slicedpan-ie/contact.html' },
-    { name: 'Legal', href: '/slicedpan-ie/legal.html' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'Legal', href: '/legal' },
   ]
 
   return (
@@ -17,7 +17,7 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo/Company Name */}
-          <a href="/slicedpan-ie/" className="flex items-center space-x-2">
+          <a href="/" className="flex items-center space-x-2">
             <span className="text-xl font-bold">Sliced Pan Solutions</span>
           </a>
 

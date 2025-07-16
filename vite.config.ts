@@ -14,15 +14,15 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/slicedpan-ie/',
+  base: '/',
   build: {
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        about: resolve(__dirname, 'about.html'),
-        services: resolve(__dirname, 'services.html'),
-        contact: resolve(__dirname, 'contact.html'),
-        legal: resolve(__dirname, 'legal.html'),
+        about: resolve(__dirname, 'about/index.html'),
+        services: resolve(__dirname, 'services/index.html'),
+        contact: resolve(__dirname, 'contact/index.html'),
+        legal: resolve(__dirname, 'legal/index.html'),
       },
     },
   },
